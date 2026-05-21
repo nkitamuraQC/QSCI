@@ -24,7 +24,6 @@ class QSCI_MPS:
         self.dmrg = None
         self.mps = None
         self.uccsd = None
-        self.max_steps = 10  # Default maximum steps for DMRG, can be adjusted later
 
     def get_init_guess(self, nuc=0.):
         """Perform a main step of the DMRG calculation."""
@@ -35,9 +34,8 @@ class QSCI_MPS:
         self.mps = mps
         return
 
-    def kernel(self, max_steps=10, use_dmrg2=True, nuc=0.):
+    def kernel(self, nuc=0.):
         # self.localize()
-        self.max_steps = max_steps
         self.get_ints()
         self.dmrg = DMRGCalculator(
             self.mf,

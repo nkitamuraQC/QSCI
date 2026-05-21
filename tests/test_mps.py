@@ -26,7 +26,7 @@ def test_H4():
 
     qsci_mps_cls = QSCI_MPS(mf)
     qsci_mps_cls.get_ints()
-    qsci_mps_cls.kernel(max_steps=14, use_dmrg2=True, nuc=nuc)
+    qsci_mps_cls.kernel(nuc=nuc)
     # print("DMRG energy =", energy)
     return
 
